@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import { Vazirmatn } from 'next/font/google';
+import erfanAvatar from '../src/assets/images/erfanrahmanian-avatar.png';
 import './globals.css'; // Global styles
 
 const vazirmatn = Vazirmatn({
@@ -11,6 +12,10 @@ const vazirmatn = Vazirmatn({
 export const metadata: Metadata = {
   title: 'عرفان -- توسعه‌دهنده فرانت‌اند',
   description: 'پورتفولیو و رزومه حرفه‌ای عرفان، توسعه‌دهنده فرانت‌اند و علاقه‌مند به هک و امنیت سایبری',
+  icons: [
+    { rel: 'icon', url: erfanAvatar.src, sizes: '192x192', type: 'image/png' },
+    { rel: 'apple-touch-icon', url: erfanAvatar.src, sizes: '192x192' },
+  ],
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
