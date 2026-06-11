@@ -777,7 +777,7 @@ export default function Home() {
               </div>
               <ul className="space-y-3 text-sm text-[#D7E2EA]/80">
                 <li><strong className="text-white">نام کامل:</strong> محمد عرفان رحمانیان</li>
-                <li><strong className="text-white">سن:</strong> ۲۰ سال (متولد ۱۳۸۴)</li>
+                <li><strong className="text-white">سن:</strong> 21 سال (متولد 1383)</li>
                 <li><strong className="text-white">وضعیت تأهل:</strong> مجرد</li>
                 <li><strong className="text-white">آدرس:</strong> یزد، خیابان کاشانی</li>
                 <li><strong className="text-white">وضعیت نظام وظیفه:</strong> معافیت تحصیلی</li>
