@@ -1,0 +1,6 @@
+{
+  "name": "Erfan - Frontend & Cyber Security Portfolio",
+  "description": "پورتفولیو و رزومه شخصی عرفان، توسعه‌دهنده فرانت‌اند و علاقه‌مند به هک و امنیت سایبری",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
