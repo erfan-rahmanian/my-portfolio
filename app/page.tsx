@@ -668,7 +668,7 @@ export default function Home() {
               {row1Gifs.map((url, i) => (
                 <div
                   key={`r1-${i}`}
-                  className="w-[280px] h-[180px] min-w-[280px] min-h-[180px] sm:w-[420px] sm:h-[270px] sm:min-w-[420px] sm:min-h-[270px] rounded-2xl overflow-hidden shadow-lg border border-white/5 bg-[#151515]"
+                  className="board-card w-[280px] h-[180px] min-w-[280px] min-h-[180px] sm:w-[420px] sm:h-[270px] sm:min-w-[420px] sm:min-h-[270px] rounded-2xl overflow-hidden shadow-lg"
                 >
                   <img
                     src={url}
@@ -694,7 +694,7 @@ export default function Home() {
               {row2Gifs.map((url, i) => (
                 <div
                   key={`r2-${i}`}
-                  className="w-[280px] h-[180px] min-w-[280px] min-h-[180px] sm:w-[420px] sm:h-[270px] sm:min-w-[420px] sm:min-h-[270px] rounded-2xl overflow-hidden shadow-lg border border-white/5 bg-[#151515]"
+                  className="board-card w-[280px] h-[180px] min-w-[280px] min-h-[180px] sm:w-[420px] sm:h-[270px] sm:min-w-[420px] sm:min-h-[270px] rounded-2xl overflow-hidden shadow-lg"
                 >
                   <img
                     src={url}
@@ -761,7 +761,7 @@ export default function Home() {
           {/* About Erfan's background details */}
           <div className="mt-10 sm:mt-12 md:mt-14 w-full flex justify-center">
             <AnimatedText
-              text="من توسعه‌دهنده فرانت‌اند با بیش از دو سال تجربه عملی در ایجاد رابط‌های کاربری مدرن و واکنش‌گرا هستم. متخصص در پیاده‌سازی پروژه‌های تک‌صفحه‌ای و پلتفرم‌های تعاملی با React ،Next.js ،TypeScript و Angular با تمرکز حداکثری بر بهینه‌سازی عملکرد لود و خلق تجربه‌های کاربری بی‌نقص. علاقه فراوانی به یادگیری فناوری‌های نوین، پیاده‌سازی ایده‌های استارتاپی، طراحی تمیز و ارائه‌ی استانداردهای نوین فرانت‌اند دارم."
+              text="من توسعه‌دهنده فرانت‌اند با بیش از چهار سال تجربه عملی در ایجاد رابط‌های کاربری مدرن و واکنش‌گرا هستم. متخصص در پیاده‌سازی پروژه‌های تک‌صفحه‌ای و پلتفرم‌های تعاملی با React ،Next.js ،TypeScript و Angular با تمرکز حداکثری بر بهینه‌سازی عملکرد لود و خلق تجربه‌های کاربری بی‌نقص. علاقه فراوانی به یادگیری فناوری‌های نوین، پیاده‌سازی ایده‌های استارتاپی، طراحی تمیز و ارائه‌ی استانداردهای نوین فرانت‌اند دارم."
               className="max-w-[700px] leading-relaxed text-[#D7E2EA] font-light text-right"
             />
           </div>
@@ -770,7 +770,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12 text-right">
             
             {/* Quick Profile Bio */}
-            <FadeIn delay={0.1} y={30} className="bg-neutral-900/60 backdrop-blur-md rounded-3xl p-6 border border-[#D7E2EA]/10 hover:border-[#B600A8]/30 transition-all duration-300">
+            <FadeIn delay={0.1} y={30} className="board-card backdrop-blur-md rounded-3xl p-6 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <User className="text-[#B600A8] w-5 h-5" />
                 <h3 className="font-bold text-white text-lg">مشخصات فردی</h3>
@@ -785,7 +785,7 @@ export default function Home() {
             </FadeIn>
 
             {/* Academic & Languages */}
-            <FadeIn delay={0.2} y={30} className="bg-neutral-900/60 backdrop-blur-md rounded-3xl p-6 border border-[#D7E2EA]/10 hover:border-[#B600A8]/30 transition-all duration-300">
+            <FadeIn delay={0.2} y={30} className="board-card backdrop-blur-md rounded-3xl p-6 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="text-[#B600A8] w-5 h-5" />
                 <h3 className="font-bold text-white text-lg">تحصیلات و زبان‌ها</h3>
@@ -809,7 +809,7 @@ export default function Home() {
             </FadeIn>
 
             {/* Career Goals Block */}
-            <FadeIn delay={0.3} y={30} className="bg-neutral-900/60 backdrop-blur-md rounded-3xl p-6 border border-[#D7E2EA]/10 hover:border-[#B600A8]/30 transition-all duration-300 md:col-span-1">
+            <FadeIn delay={0.3} y={30} className="board-card backdrop-blur-md rounded-3xl p-6 transition-all duration-300 md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <Award className="text-[#B600A8] w-5 h-5" />
                 <h3 className="font-bold text-white text-lg">اهداف شغلی و آینده</h3>
@@ -884,7 +884,7 @@ export default function Home() {
                 {/* Visual bullet circle */}
                 <div className="absolute top-1.5 -right-[31px] sm:-right-[39px] w-4 h-4 rounded-full bg-[#B600A8] border-4 border-[#101010] shadow-md shadow-[#B600A8]/40" />
 
-                <div className="bg-neutral-900/45 p-6 sm:p-8 rounded-[30px] border border-[#D7E2EA]/5 hover:border-[#D7E2EA]/15 transition-all duration-300">
+                <div className="board-card p-6 sm:p-8 rounded-[30px] transition-all duration-300">
                   <div className="flex flex-col sm:flex-row-reverse justify-between sm:items-center gap-2 mb-4 pb-4 border-b border-[#D7E2EA]/5">
                     <span className="text-xs sm:text-sm bg-[#B600A8]/15 text-[#D7E2EA] px-3.5 py-1 rounded-full border border-[#B600A8]/30 font-semibold self-start sm:self-auto">
                       {item.duration}
@@ -953,7 +953,7 @@ export default function Home() {
             {/* Top Cards: Cybersecurity Key Focus Areas */}
             <div className="lg:col-span-5 space-y-6">
               <FadeIn delay={0.1} y={30}>
-                <div className="bg-neutral-900/40 backdrop-blur-md rounded-[32px] p-6 sm:p-8 border border-white/5 hover:border-[#B600A8]/30 transition-all duration-300">
+                <div className="board-card backdrop-blur-md rounded-[32px] p-6 sm:p-8 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-6 justify-end">
                     <h3 className="font-extrabold text-white text-lg sm:text-xl">تخصص و مهارت‌های امنیتی</h3>
                     <div className="p-2.5 bg-[#B600A8]/10 rounded-2xl border border-[#B600A8]/20 text-[#B600A8] flex items-center justify-center">
@@ -999,7 +999,7 @@ export default function Home() {
 
               {/* Lab Platforms */}
               <FadeIn delay={0.2} y={30}>
-                <div className="bg-neutral-900/40 backdrop-blur-md rounded-[32px] p-6 border border-white/5 flex items-center justify-between gap-4">
+                <div className="board-card rounded-[32px] p-6 flex items-center justify-between gap-4">
                   <div className="text-right">
                     <span className="text-xs text-[#B600A8] font-bold block mb-1">پلتفرم‌های یادگیری عملی</span>
                     <span className="text-sm text-white font-bold block">فعالیت مستمر و حل چالش‌های امنیتی</span>
@@ -1016,7 +1016,7 @@ export default function Home() {
             {/* Right Cards: Completed Courses List */}
             <div className="lg:col-span-7 space-y-6">
               <FadeIn delay={0.15} y={30}>
-                <div className="bg-neutral-900/40 backdrop-blur-md rounded-[32px] p-6 sm:p-8 border border-white/5 hover:border-[#B600A8]/30 transition-all duration-300">
+                <div className="board-card backdrop-blur-md rounded-[32px] p-6 sm:p-8 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-8 justify-end">
                     <h3 className="font-extrabold text-white text-lg sm:text-xl">دوره‌ها و مدارک علمی سپری‌شده</h3>
                     <div className="p-2.5 bg-[#B600A8]/10 rounded-2xl border border-[#B600A8]/20 text-[#B600A8] flex items-center justify-center">
@@ -1165,7 +1165,7 @@ export default function Home() {
                   transition={{ duration: 0.4 }}
                   key={project.id}
                   onClick={() => handleProjectClick(project)}
-                  className="bg-neutral-900/70 hover:bg-neutral-900/90 rounded-[32px] border border-[#D7E2EA]/10 p-6 sm:p-7 flex flex-col justify-between h-80 transition-all duration-300 hover:border-[#B600A8]/30 group cursor-pointer hover:shadow-xl hover:shadow-black/50"
+                  className="board-card rounded-[32px] p-6 sm:p-7 flex flex-col justify-between h-80 transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-black/50"
                 >
                   <div className="w-full text-right flex flex-col">
                     <div className="flex justify-between items-center mb-4">
@@ -1257,7 +1257,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
             {SKILL_CATEGORIES.map((cat, catIdx) => (
-              <FadeIn key={catIdx} delay={catIdx * 0.1} y={30} className="bg-neutral-900/40 backdrop-blur-md rounded-[32px] p-6 sm:p-8 border border-white/5 hover:border-[#B600A8]/30 transition-all duration-300 space-y-6">
+              <FadeIn key={catIdx} delay={catIdx * 0.1} y={30} className="board-card backdrop-blur-md rounded-[32px] p-6 sm:p-8 transition-all duration-300 space-y-6">
                 <h3 className="font-extrabold text-white text-lg sm:text-xl border-b border-white/10 pb-3 flex items-center justify-between text-right">
                   <span className="text-xs bg-white/5 text-neutral-300 border border-white/5 px-2.5 py-0.5 rounded-full font-mono uppercase">
                     فصل {catIdx + 1}
@@ -1330,7 +1330,7 @@ export default function Home() {
                 key={index}
                 delay={index * 0.1}
                 y={30}
-                className="bg-neutral-900/50 hover:bg-neutral-900 p-6 rounded-3xl border border-[#D7E2EA]/10 hover:border-[#B600A8]/30 transition-all duration-300 flex flex-col justify-between group"
+                className="board-card p-6 rounded-3xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex justify-between items-center mb-4 text-xs">

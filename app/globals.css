@@ -31,3 +31,12 @@
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
+
+.board-card {
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(216, 180, 254, 0.24);
+}
+
+.board-card:hover {
+  border-color: rgba(216, 180, 254, 0.42);
+}
