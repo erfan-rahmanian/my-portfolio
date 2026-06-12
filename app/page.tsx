@@ -15,6 +15,7 @@ import LiveProjectButton from '../components/LiveProjectButton';
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
 import AnimatedText from '../components/AnimatedText';
+import LightningBackground from '../components/LightningBackground';
 
 // Import newly uploaded Erfan's custom avatar
 import erfanAvatar from '../src/assets/images/erfanrahmanian-avatar.png';
@@ -561,6 +562,8 @@ export default function Home() {
         id="hero-section"
         className="relative h-screen flex flex-col justify-between overflow-hidden select-none w-full"
       >
+        <LightningBackground />
+
         {/* Animated background 3D elements */}
         <Floating3DAsset
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png"
