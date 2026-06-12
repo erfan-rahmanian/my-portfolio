@@ -637,7 +637,7 @@ export default function Home() {
         </FadeIn>
 
         {/* Hero Portrait - uses custom avatar from ChatGPT sharing link with Figma backup */}
-        <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[240px] sm:w-[320px] md:w-[390px] lg:w-[440px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none">
+        <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[500px] top-[34%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-[12%] pointer-events-none">
           <FadeIn delay={0.6} y={30}>
             <Magnet padding={150} strength={3}>
               <img
