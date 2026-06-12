@@ -506,41 +506,41 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 bg-[#0C0C0C]/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center gap-8 text-[#D7E2EA] font-sans"
+            className="fixed inset-0 bg-[#0C0C0C]/95 backdrop-blur-2xl z-40 flex flex-col justify-center items-center gap-7 text-[#D7E2EA] font-sans"
             dir="rtl"
           >
             <a
               href="#about-section"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold hover:text-[#B600A8] transition-colors"
+              className="text-3xl font-black tracking-tight text-white/90 transition-all duration-200 hover:text-[#B600A8] hover:scale-105"
             >
               درباره من
             </a>
             <a
               href="#experience-section"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold hover:text-[#B600A8] transition-colors"
+              className="text-3xl font-black tracking-tight text-white/90 transition-all duration-200 hover:text-[#B600A8] hover:scale-105"
             >
               سوابق و رزومه
             </a>
             <a
               href="#cybersecurity-section"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold hover:text-[#B600A8] transition-colors"
+              className="text-3xl font-black tracking-tight text-white/90 transition-all duration-200 hover:text-[#B600A8] hover:scale-105"
             >
               امنیت سایبری و دوره‌ها
             </a>
             <a
               href="#projects-section"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold hover:text-[#B600A8] transition-colors"
+              className="text-3xl font-black tracking-tight text-white/90 transition-all duration-200 hover:text-[#B600A8] hover:scale-105"
             >
               پروژه‌ها
             </a>
             <a
               href="#skills-section"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold hover:text-[#B600A8] transition-colors"
+              className="text-3xl font-black tracking-tight text-white/90 transition-all duration-200 hover:text-[#B600A8] hover:scale-105"
             >
               مهارت‌ها
             </a>
@@ -549,7 +549,7 @@ export default function Home() {
                 setIsMobileMenuOpen(false);
                 triggerContactModal();
               }}
-              className="text-2.5xl font-extrabold text-[#B600A8] bg-white/5 px-8 py-3 rounded-full border border-white/10 hover:bg-[#B600A8]/20 transition-all active:scale-95 cursor-pointer"
+              className="rounded-full border border-white/10 bg-gradient-to-r from-[#B600A8] to-[#7621B0] px-8 py-3 text-2xl font-extrabold text-white shadow-[0_0_30px_rgba(182,0,168,0.45)] transition-all hover:scale-105 hover:shadow-[0_0_45px_rgba(182,0,168,0.65)] active:scale-95 cursor-pointer"
             >
               تماس با من
             </button>
@@ -581,68 +581,68 @@ export default function Home() {
 
         {/* Navbar */}
         <FadeIn delay={0} y={-20} as="nav" className="relative z-50 w-full">
-          <div className="flex justify-between items-center w-full px-6 md:px-10 pt-6 md:pt-8 bg-[#0C0C0C]/40 backdrop-blur-md">
-            {/* Desktop Links */}
-            <div className="hidden md:flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
-              <a
-                href="#about-section"
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200"
-              >
-                درباره من
-              </a>
-              <a
-                href="#experience-section"
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200"
-              >
-                سوابق و رزومه
-              </a>
-              <a
-                href="#cybersecurity-section"
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200 white-space-nowrap"
-              >
-                امنیت سایبری
-              </a>
-              <a
-                href="#projects-section"
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200"
-              >
-                پروژه‌ها
-              </a>
-              <a
-                href="#skills-section"
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200"
-              >
-                مهارت‌ها
-              </a>
-              <button
-                onClick={triggerContactModal}
-                className="text-[#D7E2EA] font-semibold text-sm md:text-lg lg:text-[1.15rem] xl:text-[1.3rem] hover:opacity-70 transition-opacity duration-200 bg-transparent border-0 cursor-pointer"
-              >
-                تماس
-              </button>
-            </div>
+          <div className="mx-4 mt-4 md:mt-6 rounded-full border border-white/10 bg-[#0C0C0C]/55 backdrop-blur-xl shadow-2xl shadow-[#B600A8]/20">
+            <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-6">
+              <div className="hidden md:flex flex-1 justify-start gap-6 sm:gap-8 lg:gap-10 items-center">
+                <a
+                  href="#about-section"
+                  className="relative text-[#D7E2EA] font-semibold text-sm md:text-base lg:text-lg xl:text-[1.05rem] transition-all duration-200 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gradient-to-r after:from-[#B600A8] after:to-[#00F3FF] hover:after:w-full"
+                >
+                  درباره من
+                </a>
+                <a
+                  href="#experience-section"
+                  className="relative text-[#D7E2EA] font-semibold text-sm md:text-base lg:text-lg xl:text-[1.05rem] transition-all duration-200 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gradient-to-r after:from-[#B600A8] after:to-[#00F3FF] hover:after:w-full"
+                >
+                  سوابق و رزومه
+                </a>
+                <a
+                  href="#cybersecurity-section"
+                  className="relative text-[#D7E2EA] font-semibold text-sm md:text-base lg:text-lg xl:text-[1.05rem] transition-all duration-200 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gradient-to-r after:from-[#B600A8] after:to-[#00F3FF] hover:after:w-full whitespace-nowrap"
+                >
+                  امنیت سایبری
+                </a>
+                <a
+                  href="#projects-section"
+                  className="relative text-[#D7E2EA] font-semibold text-sm md:text-base lg:text-lg xl:text-[1.05rem] transition-all duration-200 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gradient-to-r after:from-[#B600A8] after:to-[#00F3FF] hover:after:w-full"
+                >
+                  پروژه‌ها
+                </a>
+                <a
+                  href="#skills-section"
+                  className="relative text-[#D7E2EA] font-semibold text-sm md:text-base lg:text-lg xl:text-[1.05rem] transition-all duration-200 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gradient-to-r after:from-[#B600A8] after:to-[#00F3FF] hover:after:w-full"
+                >
+                  مهارت‌ها
+                </a>
+                <button
+                  onClick={triggerContactModal}
+                  className="relative rounded-full px-4 py-2 text-sm md:text-base font-semibold text-white/90 transition-all duration-200 hover:text-white after:absolute after:inset-0 after:-z-10 after:rounded-full after:bg-gradient-to-r after:from-[#B600A8]/15 after:to-[#00F3FF]/15 hover:after:from-[#B600A8]/25 hover:after:to-[#00F3FF]/25"
+                >
+                  تماس
+                </button>
+              </div>
 
-            {/* Mobile Hamburger Button */}
-            <div className="flex md:hidden items-center z-50">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white focus:outline-none p-2 bg-neutral-900/50 rounded-full border border-white/5 active:scale-95 transition-transform cursor-pointer"
-                aria-label="Toggle Menu"
-              >
-                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-              </button>
-            </div>
+              <div className="text-xl md:text-2xl font-black italic tracking-tighter text-white select-none hover:opacity-80 transition-opacity duration-300 font-sans">
+                ERFAN
+              </div>
 
-            <div className="text-xl md:text-2xl font-black italic tracking-tighter text-white select-none hover:opacity-80 transition-opacity duration-300 font-sans">
-              ERFAN
+              <div className="flex md:hidden items-center">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-white focus:outline-none p-2 rounded-full border border-white/15 bg-white/10 backdrop-blur hover:bg-white/15 active:scale-95 transition-all shadow-[0_0_20px_rgba(182,0,168,0.35)] cursor-pointer"
+                  aria-label="Toggle Menu"
+                >
+                  {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+              </div>
             </div>
           </div>
         </FadeIn>
 
         {/* Hero Portrait - uses custom avatar from ChatGPT sharing link with Figma backup */}
-        <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[500px] top-[34%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-[12%] pointer-events-none">
+        <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[300px] sm:w-[400px] md:w-[490px] lg:w-[560px] top-[55%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none">
           <FadeIn delay={0.6} y={30}>
-            <Magnet padding={150} strength={3}>
+            <Magnet padding={90} strength={1.4}>
               <img
                 src={avatarSrc}
                 onError={() => {
@@ -658,9 +658,9 @@ export default function Home() {
         </div>
 
         {/* Hero Heading Container */}
-        <div className="flex-1 flex flex-col justify-start pt-12 sm:pt-16 md:pt-10 overflow-hidden relative z-0">
+        <div className="flex-1 flex flex-col justify-start pt-14 sm:pt-18 md:pt-14 overflow-hidden relative z-0">
           <FadeIn delay={0.15} y={40} className="w-full">
-            <h1 className="hero-heading font-black tracking-tight leading-none text-center whitespace-nowrap w-full text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] mt-6 sm:mt-4 md:-mt-5 uppercase">
+            <h1 className="hero-heading font-black tracking-tight leading-none text-center whitespace-nowrap w-full text-[12vw] sm:text-[13vw] md:text-[14vw] lg:text-[15vw] mt-8 sm:mt-7 md:mt-5 lg:mt-3 uppercase">
               hi, i&apos;m erfan
             </h1>
           </FadeIn>
