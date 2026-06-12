@@ -18,6 +18,8 @@ import AnimatedText from '../components/AnimatedText';
 
 // Import newly uploaded Erfan's custom avatar
 import erfanAvatar from '../src/assets/images/erfanrahmanian-avatar.png';
+import customCursor from '../src/assets/images/-cursor--SweezyCursors.png';
+import pointerCursor from '../src/assets/images/-pointer--SweezyCursors.png';
 
 interface Floating3DAssetProps {
   src: string;
@@ -345,6 +347,7 @@ export default function Home() {
   // Mouse position state for the glowing halo
   const [mousePos, setMousePos] = useState({ x: -200, y: -200 });
   const [isMouseHovered, setIsMouseHovered] = useState(false);
+  const [isPointerHovered, setIsPointerHovered] = useState(false);
 
   // Disable automatic scroll restoration on refresh and scroll to top
   useEffect(() => {
@@ -370,14 +373,37 @@ export default function Home() {
 
     const handleMouseLeave = () => {
       setIsMouseHovered(false);
+      setIsPointerHovered(false);
+    };
+
+    const handlePointerElementEnter = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]')) {
+        setIsPointerHovered(true);
+      }
+    };
+
+    const handlePointerElementLeave = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const relatedTarget = e.relatedTarget as HTMLElement | null;
+      const isInteractive = target?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]');
+      const isStillInsideInteractive = relatedTarget?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]');
+
+      if (isInteractive && !isStillInsideInteractive) {
+        setIsPointerHovered(false);
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseover', handlePointerElementEnter);
+    document.addEventListener('mouseout', handlePointerElementLeave);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseover', handlePointerElementEnter);
+      document.removeEventListener('mouseout', handlePointerElementLeave);
     };
   }, []);
 
@@ -441,15 +467,29 @@ export default function Home() {
   const row2Gifs = [...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11)];
 
   return (
-    <main className="w-full bg-[#0C0C0C] min-h-screen text-[#D7E2EA] overflow-x-clip font-sans selection:bg-[#B600A8]/30 relative text-right" dir="rtl">
+    <main className={`w-full bg-[#0C0C0C] min-h-screen text-[#D7E2EA] overflow-x-clip font-sans selection:bg-[#B600A8]/30 relative text-right ${isMouseHovered ? 'custom-cursor-active' : ''}`} dir="rtl">
       
       {/* Interactive Purple Glowing Cursor Halo */}
       {isMouseHovered && (
         <div
-          className="fixed pointer-events-none z-50 w-[350px] h-[350px] rounded-full blur-[110px] opacity-60 mix-blend-screen transition-transform duration-75 ease-out"
+          className="fixed pointer-events-none z-50 w-[350px] h-[350px] rounded-full blur-[100px] opacity-70 mix-blend-screen transition-transform duration-75 ease-out"
           style={{
-            background: 'radial-gradient(circle, rgba(182,0,168,0.55) 0%, rgba(118,33,176,0.2) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(182,0,168,0.75) 0%, rgba(118,33,176,0.34) 48%, rgba(168,85,247,0.16) 72%, transparent 100%)',
             transform: `translate3d(${mousePos.x - 175}px, ${mousePos.y - 175}px, 0)`,
+            left: 0,
+            top: 0,
+            willChange: 'transform',
+          }}
+        />
+      )}
+
+      {isMouseHovered && (
+        <img
+          src={isPointerHovered ? pointerCursor.src : customCursor.src}
+          alt=""
+          className="fixed pointer-events-none select-none z-[100] w-[36px] h-[36px] object-contain"
+          style={{
+            transform: `translate3d(${mousePos.x - 18}px, ${mousePos.y - 18}px, 0)`,
             left: 0,
             top: 0,
             willChange: 'transform',
