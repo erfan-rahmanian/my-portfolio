@@ -19,8 +19,6 @@ import LightningBackground from '../components/LightningBackground';
 
 // Import newly uploaded Erfan's custom avatar
 import erfanAvatar from '../src/assets/images/erfanrahmanian-avatar.png';
-import customCursor from '../src/assets/images/-cursor--SweezyCursors.png';
-import pointerCursor from '../src/assets/images/-pointer--SweezyCursors.png';
 
 interface Floating3DAssetProps {
   src: string;
@@ -345,11 +343,6 @@ export default function Home() {
   // Avatar loaded from the locally uploaded image asset
   const [avatarSrc, setAvatarSrc] = useState(erfanAvatar.src);
 
-  // Mouse position state for the glowing halo
-  const [mousePos, setMousePos] = useState({ x: -200, y: -200 });
-  const [isMouseHovered, setIsMouseHovered] = useState(false);
-  const [isPointerHovered, setIsPointerHovered] = useState(false);
-
   // Disable automatic scroll restoration on refresh and scroll to top
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -363,49 +356,6 @@ export default function Home() {
       }, 150);
       return () => clearTimeout(timer);
     }
-  }, []);
-
-  // Mouse move listener for custom glowing background halo
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-      setIsMouseHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsMouseHovered(false);
-      setIsPointerHovered(false);
-    };
-
-    const handlePointerElementEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]')) {
-        setIsPointerHovered(true);
-      }
-    };
-
-    const handlePointerElementLeave = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      const relatedTarget = e.relatedTarget as HTMLElement | null;
-      const isInteractive = target?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]');
-      const isStillInsideInteractive = relatedTarget?.closest('a, button, input, textarea, select, [class*="cursor-pointer"]');
-
-      if (isInteractive && !isStillInsideInteractive) {
-        setIsPointerHovered(false);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseover', handlePointerElementEnter);
-    document.addEventListener('mouseout', handlePointerElementLeave);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseover', handlePointerElementEnter);
-      document.removeEventListener('mouseout', handlePointerElementLeave);
-    };
   }, []);
 
   // Listening to scroll of Page for Marquee
@@ -468,36 +418,8 @@ export default function Home() {
   const row2Gifs = [...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11), ...MARQUEE_GIFS.slice(11)];
 
   return (
-    <main className={`w-full bg-[#0C0C0C] min-h-screen text-[#D7E2EA] overflow-x-clip font-sans selection:bg-[#B600A8]/30 relative text-right ${isMouseHovered ? 'custom-cursor-active' : ''}`} dir="rtl">
+    <main className="w-full bg-[#0C0C0C] min-h-screen text-[#D7E2EA] overflow-x-clip font-sans selection:bg-[#B600A8]/30 relative text-right" dir="rtl">
       
-      {/* Interactive Purple Glowing Cursor Halo */}
-      {isMouseHovered && (
-        <div
-          className="fixed pointer-events-none z-50 w-[350px] h-[350px] rounded-full blur-[100px] opacity-70 mix-blend-screen transition-transform duration-75 ease-out"
-          style={{
-            background: 'radial-gradient(circle, rgba(182,0,168,0.75) 0%, rgba(118,33,176,0.34) 48%, rgba(168,85,247,0.16) 72%, transparent 100%)',
-            transform: `translate3d(${mousePos.x - 175}px, ${mousePos.y - 175}px, 0)`,
-            left: 0,
-            top: 0,
-            willChange: 'transform',
-          }}
-        />
-      )}
-
-      {isMouseHovered && (
-        <img
-          src={isPointerHovered ? pointerCursor.src : customCursor.src}
-          alt=""
-          className="fixed pointer-events-none select-none z-[100] w-[36px] h-[36px] object-contain"
-          style={{
-            transform: `translate3d(${mousePos.x - 18}px, ${mousePos.y - 18}px, 0)`,
-            left: 0,
-            top: 0,
-            willChange: 'transform',
-          }}
-        />
-      )}
-
       {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -667,7 +589,7 @@ export default function Home() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 w-full z-20">
+        <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 w-full z-30 relative">
           <FadeIn delay={0.35} y={20} className="flex flex-col gap-1 items-start text-right">
             <p
               className="text-white font-black text-right mb-1 tracking-tight"
@@ -1417,7 +1339,7 @@ export default function Home() {
       </section>
 
       {/* 8. FOOTER PART & SOCIAL LINKS */}
-      <footer className="bg-[#070707] border-t border-[#D7E2EA]/10 py-16 px-6 md:px-10 text-right text-sm">
+      <footer className="relative z-10 bg-[#050508] border-t border-[#B600A8]/20 py-16 px-6 md:px-10 text-right text-sm shadow-[0_-20px_80px_rgba(182,0,168,0.12)]">
         <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 pb-10">
           
           {/* Logo & Slogan */}
