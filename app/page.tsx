@@ -343,6 +343,28 @@ export default function Home() {
   // Avatar loaded from the locally uploaded image asset
   const [avatarSrc, setAvatarSrc] = useState(erfanAvatar.src);
 
+  const [mousePos, setMousePos] = useState({ x: -120, y: -120 });
+  const [isMouseHovered, setIsMouseHovered] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+      setIsMouseHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsMouseHovered(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
   // Disable automatic scroll restoration on refresh and scroll to top
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -419,7 +441,19 @@ export default function Home() {
 
   return (
     <main className="w-full bg-[#0C0C0C] min-h-screen text-[#D7E2EA] overflow-x-clip font-sans selection:bg-[#B600A8]/30 relative text-right" dir="rtl">
-      
+      {isMouseHovered && (
+        <div
+          className="fixed pointer-events-none z-40 w-[180px] h-[180px] rounded-full blur-[70px] opacity-90 mix-blend-screen transition-transform duration-75 ease-out"
+          style={{
+            background: 'radial-gradient(circle, rgba(182,0,168,0.95) 0%, rgba(118,33,176,0.62) 45%, rgba(168,85,247,0.32) 72%, transparent 100%)',
+            transform: `translate3d(${mousePos.x - 90}px, ${mousePos.y - 90}px, 0)`,
+            left: 0,
+            top: 0,
+            willChange: 'transform',
+          }}
+        />
+      )}
+
       {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
